@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "77356353577",
+    "firebase_url": "https://nihongoquiz-6eef7.firebaseio.com",
+    "project_id": "nihongoquiz-6eef7",
+    "storage_bucket": "nihongoquiz-6eef7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77356353577:android:af04da2e878364eb",
+        "android_client_info": {
+          "package_name": "com.sesikova.android.nihongoquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77356353577-i21n95lefsa9jas1em65mf5fqkl75m3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sesikova.android.nihongoquiz",
+            "certificate_hash": "f16c23e2cf52b2920d2996f25fe04ead212728a5"
+          }
+        },
+        {
+          "client_id": "77356353577-rjq74uvr870rgave5n67l9ouvlojr1mj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlOkibcwGc8I5zDaLQIshoDo46sxkfyJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77356353577-rjq74uvr870rgave5n67l9ouvlojr1mj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
