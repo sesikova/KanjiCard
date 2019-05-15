@@ -26,20 +26,20 @@ public class TopicActivity extends AppCompatActivity {
         setTitle(getString(R.string.quiz_topic));
 
         DataBaseQuery dbQuery = new DataBaseQuery(TopicActivity.this);
-        List<TopicObject> categoryData = dbQuery.getTopicList();
+        List<TopicObject> topicList = dbQuery.getTopicList();
 
-        RecyclerView quizRecyclerView = (RecyclerView)findViewById(R.id.quiz_topic);
+        RecyclerView topicRecyclerView = (RecyclerView)findViewById(R.id.topic_list);
         GridLayoutManager mGrid = new GridLayoutManager(this, 2);
-        quizRecyclerView.setLayoutManager(mGrid);
-        quizRecyclerView.setHasFixedSize(true);
+        topicRecyclerView.setLayoutManager(mGrid);
+        topicRecyclerView.setHasFixedSize(true);
 
-        TopicAdapter mAdapter = new TopicAdapter(TopicActivity.this, categoryData);
-        quizRecyclerView.setAdapter(mAdapter);
+        TopicAdapter topicAdapter = new TopicAdapter(TopicActivity.this, topicList);
+        topicRecyclerView.setAdapter(topicAdapter);
     }
 
     @Override
     public void onBackPressed() {
-        Intent backIntent = new Intent(TopicActivity.this, MenuActivity.class);
-        startActivity(backIntent);
+        Intent menuActivityIntent = new Intent(TopicActivity.this, MenuActivity.class);
+        startActivity(menuActivityIntent);
     }
 }

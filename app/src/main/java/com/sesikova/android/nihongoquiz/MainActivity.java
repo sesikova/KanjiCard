@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent menuIntent = new Intent(MainActivity.this, MenuActivity.class);
-                startActivity(menuIntent);
+                Intent menuActivityIntent = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(menuActivityIntent);
                 MainActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

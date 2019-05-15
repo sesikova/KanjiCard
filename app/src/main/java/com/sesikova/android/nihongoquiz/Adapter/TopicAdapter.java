@@ -28,23 +28,22 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
     @Override
     public TopicViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_topic, parent, false);
-        TopicViewHolder quizCategoryHolder = new TopicViewHolder(layoutView);
-        return quizCategoryHolder;
+        return new TopicViewHolder(layoutView);
     }
 
     @Override
-    public void onBindViewHolder(final TopicViewHolder holder, int position) {
+    public void onBindViewHolder(final TopicViewHolder topicViewHolder, int position) {
         TopicObject topicObject = topicObjectList.get(position);
         final String topicName = topicObjectList.get(position).getTopicName();
         final String topicNameJapan = topicObjectList.get(position).getTopicNameJapan();
         final int id = topicObject.getTopicId();
 
-        holder.topicName.setText(topicName);
-        holder.topicNameJapan.setText(topicNameJapan);
+        topicViewHolder.topicName.setText(topicName);
+        topicViewHolder.topicNameJapan.setText(topicNameJapan);
         int imageResource = getResourseId(context, topicObject.getTopicImagePath(), "drawable", context.getPackageName());
-        holder.topicImage.setImageResource(imageResource);
+        topicViewHolder.topicImage.setImageResource(imageResource);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        topicViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent quizTypeIntent = new Intent(context, QuizActivity.class);

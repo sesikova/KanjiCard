@@ -8,7 +8,7 @@ android:background="@color/colorPrimaryLight"
 tools:context="com.sesikova.android.nihongoquiz.TopicActivity">
 
 <android.support.v7.widget.RecyclerView
-    android:id="@+id/quiz_topic"
+    android:id="@+id/topic_list"
     android:layout_centerHorizontal="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
