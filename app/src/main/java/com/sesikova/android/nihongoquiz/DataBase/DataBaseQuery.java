@@ -1,25 +1,44 @@
 package com.sesikova.android.nihongoquiz.DataBase;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import android.content.Context;
 import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sesikova.android.nihongoquiz.Entity.TopicObject;
 import com.sesikova.android.nihongoquiz.Entity.QuizObject;
+import com.sesikova.android.nihongoquiz.Entity.TopicObject;
 
 
-public class DataBaseQuery extends DataBaseObject{
+
+public class DataBaseQuery {
+    private SQLiteDatabase db;
 
     public DataBaseQuery(Context context) {
-        super(context);
+        DataBaseAssetHelper dbAssetHelper;
+
+        dbAssetHelper = new DataBaseAssetHelper(context);
+        dbAssetHelper.getWritableDatabase();
+        this.db = dbAssetHelper.getReadableDatabase();
     }
+
+    private SQLiteDatabase getDbConnection(){
+        return this.db;
+    }
+
+    private void closeDbConnection(){
+        if(this.db != null){
+            this.db.close();
+        }
+    }
+
 
     public List<TopicObject> getTopicList() {
         List<TopicObject> topicList = new ArrayList<TopicObject>();
         String query = "select * from topic";
-        Cursor cursor = this.getDbConnection().rawQuery(query, null);
+        Cursor cursor = getDbConnection().rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
@@ -36,10 +55,9 @@ public class DataBaseQuery extends DataBaseObject{
     public List<QuizObject> getQuizList(int topic_id){
         List<QuizObject> QuestionList = new ArrayList<QuizObject>();
         String query = "select * from quiz where topic_id =" +  topic_id;
-        Cursor cursor = this.getDbConnection().rawQuery(query, null);
+        Cursor cursor = getDbConnection().rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
-                //int quiz_id = cursor.getInt(cursor.getColumnIndexOrThrow("topic_id"));
                 String question = cursor.getString(cursor.getColumnIndexOrThrow("question"));
                 String options = cursor.getString(cursor.getColumnIndexOrThrow("options"));
                 String answer = cursor.getString(cursor.getColumnIndexOrThrow("answer"));
@@ -49,5 +67,6 @@ public class DataBaseQuery extends DataBaseObject{
         cursor.close();
         return QuestionList;
     }
+
 
 }

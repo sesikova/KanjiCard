@@ -24,7 +24,7 @@
         android:layout_below="@+id/quiz_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp"
-        android:text="@string/quiz_slogan"
+        android:text="@string/app_slogan"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryText"

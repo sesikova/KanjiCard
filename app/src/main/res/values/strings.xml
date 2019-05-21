@@ -1,18 +1,14 @@
 <resources>
     <string name="app_name">NihongoQuiz</string>
-    <string name="quiz_slogan">千里の道も一歩から</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="text_quiz">QUIZ</string>
-    <string name="quiz_instruction">INSTRUCTION</string>
-    <string name="quiz_about">ABOUT</string>
-    <string name="quiz_topic">Quiz Topic</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="information_notice">Quiz Instruction</string>
+    <string name="app_slogan">千里の道も一歩から</string>
+    <string name="topic">TOPICS</string>
+    <string name="instruction">INSTRUCTION</string>
+    <string name="about">ABOUT</string>
+
     <string name="next_button">NEXT QUESTION</string>
-    <string name="sports">Sport Category</string>
     <string name="retake_quiz">Retake quiz</string>
     <string name="view_result">View result</string>
     <string name="quiz_result">Quiz Result</string>
     <string name="result_report">Result Report</string>
-    <string name="no_quiz_in_category">There is no quiz in this category. Add a new quiz</string>
+    <string name="no_quiz">No quiz in this topic.</string>
 </resources>

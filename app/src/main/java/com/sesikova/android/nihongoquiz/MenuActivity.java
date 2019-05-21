@@ -29,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        Button selectQuiz = (Button)findViewById(R.id.quiz_button);
+        Button selectQuiz = (Button)findViewById(R.id.topic_button);
         assert selectQuiz != null;
         selectQuiz.setOnClickListener(new View.OnClickListener() {
             @Override

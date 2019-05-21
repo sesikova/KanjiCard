@@ -18,12 +18,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
 
     private Context context;
 
-    private List<ResultObject> resultAnalysis;
+    private List<ResultObject> resultObjectList;
 
 
-    public ResultAdapter(Context context, List<ResultObject> resultAnalysis) {
+    public ResultAdapter(Context context, List<ResultObject> resultObjectList) {
         this.context = context;
-        this.resultAnalysis = resultAnalysis;
+        this.resultObjectList = resultObjectList;
     }
 
     @Override
@@ -35,15 +35,15 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
 
     @Override
     public void onBindViewHolder(ResultViewHolder holder, int position) {
-        ResultObject resultData = resultAnalysis.get(position);
+        ResultObject resultObject = resultObjectList.get(position);
 
-        if(resultData != null){
-            holder.questionNum.setText("QUESTION " + resultData.getQuestionNumber());
-            holder.mainQuestion.setText(resultData.getQuestionTitle().trim());
-            holder.correctAnswer.setText("* " + resultData.getCollectAnswer().trim() + " *");
-            holder.yourAnswer.setText("Your answer: " + resultData.getSelectedAnswer().trim());
+        if(resultObject != null){
+            holder.quizIndex.setText("QUESTION " + resultObject.getQuizIndex());
+            holder.mainQuestion.setText(resultObject.getQuestionTitle().trim());
+            holder.correctAnswer.setText("* " + resultObject.getCollectAnswer().trim() + " *");
+            holder.yourAnswer.setText("Your answer: " + resultObject.getSelectedAnswer().trim());
 
-            if(resultData.isCorrect()){
+            if(resultObject.isCorrect()){
                 holder.imageMark.setImageResource(R.drawable.goodmark);
             }else{
                 holder.imageMark.setImageResource(R.drawable.badmark);
@@ -55,6 +55,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
 
     @Override
     public int getItemCount() {
-        return resultAnalysis.size();
+        return resultObjectList.size();
     }
 }

@@ -4,30 +4,30 @@ package com.sesikova.android.nihongoquiz.Entity;
 
 public class ResultObject {
 
-    private String questionNumber;
+    private String quizIndex;
 
-    private String questionTitle;
+    private String question;
 
     private String selectedAnswer;
 
-    private String collectAnswer;
+    private String answer;
 
     private boolean isCorrect;
 
-    public ResultObject(String questionNumber, String questionTitle, String selectedAnswer, String collectAnswer, boolean isCorrect) {
-        this.questionNumber = questionNumber;
-        this.questionTitle = questionTitle;
+    public ResultObject(String quizIndex, String question, String selectedAnswer, String answer, boolean isCorrect) {
+        this.quizIndex = quizIndex;
+        this.question = question;
         this.selectedAnswer = selectedAnswer;
-        this.collectAnswer = collectAnswer;
+        this.answer = answer;
         this.isCorrect = isCorrect;
     }
 
-    public String getQuestionNumber() {
-        return questionNumber;
+    public String getQuizIndex() {
+        return quizIndex;
     }
 
     public String getQuestionTitle() {
-        return questionTitle;
+        return question;
     }
 
     public String getSelectedAnswer() {
@@ -35,7 +35,7 @@ public class ResultObject {
     }
 
     public String getCollectAnswer() {
-        return collectAnswer;
+        return answer;
     }
 
     public boolean isCorrect() {

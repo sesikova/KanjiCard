@@ -15,15 +15,12 @@ import com.sesikova.android.nihongoquiz.Entity.TopicObject;
 
 public class TopicActivity extends AppCompatActivity {
 
-    private static final String TAG = TopicActivity.class.getSimpleName();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic);
 
-        setTitle(getString(R.string.quiz_topic));
+        setTitle(getString(R.string.topic));
 
         DataBaseQuery dbQuery = new DataBaseQuery(TopicActivity.this);
         List<TopicObject> topicList = dbQuery.getTopicList();

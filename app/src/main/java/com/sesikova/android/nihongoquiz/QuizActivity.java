@@ -5,7 +5,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -19,7 +18,6 @@ import com.sesikova.android.nihongoquiz.DataBase.DataBaseQuery;
 import com.sesikova.android.nihongoquiz.Entity.QuizObject;
 import com.sesikova.android.nihongoquiz.Entity.ResultObject;
 import com.sesikova.android.nihongoquiz.Entity.ScoreObject;
-import com.sesikova.android.nihongoquiz.Helper.MySharedPreference;
 
 import java.util.List;
 
@@ -88,7 +86,6 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.makeText(QuizActivity.this, "You must select an answer " + userSelectedAnswer, Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
-                        Log.d(TAG, "Match answers " + quizObject.getAnswer() + " select " + userSelectedAnswer);
                         boolean isCorrect;
 
                         if(quizObject.getAnswer().trim().equals(userSelectedAnswer.trim())){
@@ -98,20 +95,18 @@ public class QuizActivity extends AppCompatActivity {
                         }else{
                             isCorrect = false;
                         }
+
+
+
                         //add the result
                         scoreObject.addNewResult(new ResultObject(Integer.toString(quizIndex+1), quizObject.getQuestion(), userSelectedAnswer, quizObject.getAnswer(),isCorrect));
 
-
-                        Log.d(TAG, "Quiz Result " + scoreObject.getResultList().size());
                         quizIndex++;
 
                         // check if there is more question
                         if(quizIndex >= quizCount){
                             // Quiz over
                             Intent quizActivityIntent = new Intent(QuizActivity.this, ResultActivity.class);
-
-                            //GsonBuilder builder = new GsonBuilder();
-                            //Gson gson = builder.create();
 
                             Gson gson = new GsonBuilder().create();
                             final String scoreString = gson.toJson(scoreObject);
@@ -121,13 +116,9 @@ public class QuizActivity extends AppCompatActivity {
                             quizActivityIntent.putExtra("QUIZ_COUNT", String.valueOf(quizCount));
 
                             // compare score and save
-                            MySharedPreference sharedPreference = new MySharedPreference(QuizActivity.this);
                             double percentageScore = (scoreObject.getScore() * 100) / quizCount ;
                             Double mDouble = new Double(percentageScore);
-                            int presentScore = mDouble.intValue();
-                            if(!sharedPreference.isHighestScore(presentScore)){
-                                sharedPreference.saveQuizHighestQuizScore(presentScore);
-                            }
+
 
                             startActivity(quizActivityIntent);
 
@@ -146,7 +137,7 @@ public class QuizActivity extends AppCompatActivity {
             option3.setVisibility(View.GONE);
             option4.setVisibility(View.GONE);
             nextQuestionButton.setVisibility(View.GONE);
-            Toast.makeText(QuizActivity.this, getString(R.string.no_quiz_in_category), Toast.LENGTH_LONG).show();
+            Toast.makeText(QuizActivity.this, getString(R.string.no_quiz), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -169,10 +160,15 @@ public class QuizActivity extends AppCompatActivity {
 
     private void unsetRadioButton(){
         radioGroup.clearCheck();
+        option1.setChecked(false);
+        option2.setChecked(false);
+        option3.setChecked(false);
+        option4.setChecked(false);
     }
 
     private String selectedAnswerOption(int id){
         String textContent = "";
+
         if(id == R.id.answer_1){
             textContent = option1.getText().toString();
         }

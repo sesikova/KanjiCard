@@ -22,7 +22,5 @@ public class Information
             "So it will help everyone to quickly learn complex words.\n" +
             "Good luck in learning Japanese:))\n";
 
-    public static final String SHARED_PREF = "share_pref";
 
-    public static final String QUIZ_SCORE = "quiz_score";
 }

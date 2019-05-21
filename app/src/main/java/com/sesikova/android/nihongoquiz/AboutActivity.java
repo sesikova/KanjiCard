@@ -13,9 +13,9 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        setTitle(getString(R.string.information_notice));
+        setTitle(getString(R.string.about));
 
-        TextView instructionText = (TextView)findViewById(R.id.instruction);
+        TextView instructionText = (TextView)findViewById(R.id.about);
         instructionText.setText(Information.about);
     }
 }

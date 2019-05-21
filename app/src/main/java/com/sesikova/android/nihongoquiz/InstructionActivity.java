@@ -13,7 +13,7 @@ public class InstructionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruction);
 
-        setTitle(getString(R.string.information_notice));
+        setTitle(getString(R.string.instruction));
 
         TextView instructionText = (TextView)findViewById(R.id.instruction);
         instructionText.setText(Information.instruction);

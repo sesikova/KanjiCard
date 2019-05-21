@@ -19,9 +19,6 @@ public class QuizObject {
     }
 
 
-    public int getTopicId() {
-        return topicId;
-    }
 
     public String getQuestion() {
         return question;
@@ -42,12 +39,5 @@ public class QuizObject {
         return allOptions;
     }
 
-    public boolean isAnswerCorrect(String[] options, String answer){
-        for(int i = 0; i < options.length; i++){
-            if(options[i].equals(answer)){
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
