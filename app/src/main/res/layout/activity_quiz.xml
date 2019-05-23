@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.sesikova.android.nihongoquiz.QuizActivity">
+    tools:context="com.sesikova.android.kanjicard.QuizActivity">
 
     <TextView
         android:id="@+id/question_number"
