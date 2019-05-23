@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard.Helper;
+package com.sesikova.android.kanjicard.Service;
 
 
 public class Information

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.sesikova.android.kanjicard.Helper.Information;
+import com.sesikova.android.kanjicard.Service.Information;
 
 public class InstructionActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard.Adapter;
+package com.sesikova.android.kanjicard.Service;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

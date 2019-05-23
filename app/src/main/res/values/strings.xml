@@ -9,6 +9,6 @@
     <string name="retake_quiz">Retake quiz</string>
     <string name="view_result">View result</string>
     <string name="quiz_result">Quiz Result</string>
-    <string name="result_report">Result Report</string>
+    <string name="reportTitle">Report</string>
     <string name="no_quiz">No quiz in this topic.</string>
 </resources>

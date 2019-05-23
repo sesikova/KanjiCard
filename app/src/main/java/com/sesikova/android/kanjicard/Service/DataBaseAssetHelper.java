@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard.DataBase;
+package com.sesikova.android.kanjicard.Service;
 
 import android.content.Context;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;

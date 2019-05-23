@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard.DataBase;
+package com.sesikova.android.kanjicard.Service;
 
 import android.database.sqlite.SQLiteDatabase;
 
@@ -7,10 +7,6 @@ import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.sesikova.android.kanjicard.Entity.QuizObject;
-import com.sesikova.android.kanjicard.Entity.TopicObject;
-
 
 
 public class DataBaseQuery {
@@ -35,41 +31,43 @@ public class DataBaseQuery {
     }
 
 
-    public List<TopicObject> getTopicList() {
-        List<TopicObject> topicList = new ArrayList<TopicObject>();
+    public List<Topic> getTopicList() {
+        List<Topic> topicList = new ArrayList<Topic>();
+
         String query = "select * from topic";
         Cursor cursor = getDbConnection().rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
-                String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-                String name_japan = cursor.getString(cursor.getColumnIndexOrThrow("name_japan"));
+                String kanji = cursor.getString(cursor.getColumnIndexOrThrow("kanji"));
+                String english = cursor.getString(cursor.getColumnIndexOrThrow("english"));
                 String image = cursor.getString(cursor.getColumnIndexOrThrow("image"));
-                topicList.add(new TopicObject(id, name, name_japan, image));
+                topicList.add(new Topic(id, kanji, english, image));
             }while(cursor.moveToNext());
         }
         cursor.close();
+
         return topicList;
     }
 
-    public List<QuizObject> getQuizList(int topic_id){
+    public List<Card> getCardList(int topic){
+        List<Card> cardList = new ArrayList<Card>();
+        int Index = 0;
 
-
-
-
-        List<QuizObject> QuestionList = new ArrayList<QuizObject>();
-        String query = "select * from quiz where topic_id =" +  topic_id;
+        String query = "select * from card where topic =" +  topic;
         Cursor cursor = getDbConnection().rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
-                String question = cursor.getString(cursor.getColumnIndexOrThrow("question"));
-                String options = cursor.getString(cursor.getColumnIndexOrThrow("options"));
-                String answer = cursor.getString(cursor.getColumnIndexOrThrow("answer"));
-                QuestionList.add(new QuizObject(topic_id, question, options, answer));
+                Index++;
+                String kanji = cursor.getString(cursor.getColumnIndexOrThrow("kanji"));
+                String variants = cursor.getString(cursor.getColumnIndexOrThrow("variants"));
+                String english = cursor.getString(cursor.getColumnIndexOrThrow("english"));
+                cardList.add(new Card(Integer.toString(Index),kanji, variants, english));
             }while(cursor.moveToNext());
         }
         cursor.close();
-        return QuestionList;
+
+        return cardList;
     }
 
 

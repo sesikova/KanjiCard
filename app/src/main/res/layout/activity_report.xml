@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.sesikova.android.kanjicard.ResultReportActivity">
+    tools:context="com.sesikova.android.kanjicard.ReportActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/result_report"
+        android:id="@+id/reportRecyclerView"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

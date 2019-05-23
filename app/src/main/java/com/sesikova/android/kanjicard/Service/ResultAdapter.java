@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard.Adapter;
+package com.sesikova.android.kanjicard.Service;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,42 +8,37 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.sesikova.android.kanjicard.R;
-import com.sesikova.android.kanjicard.Entity.ResultObject;
 
 import java.util.List;
 
 public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
-
-    private static final String TAG = ResultAdapter.class.getSimpleName();
-
     private Context context;
+    private List<Card> cardList;
 
-    private List<ResultObject> resultObjectList;
 
-
-    public ResultAdapter(Context context, List<ResultObject> resultObjectList) {
+    public ResultAdapter(Context context, List<Card> cardList) {
         this.context = context;
-        this.resultObjectList = resultObjectList;
+        this.cardList = cardList;
     }
 
     @Override
     public ResultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_result_report, parent, false);
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_report, parent, false);
         ResultViewHolder quizResultHolder = new ResultViewHolder(layoutView);
         return quizResultHolder;
     }
 
     @Override
     public void onBindViewHolder(ResultViewHolder holder, int position) {
-        ResultObject resultObject = resultObjectList.get(position);
+        Card card = cardList.get(position);
 
-        if(resultObject != null){
-            holder.quizIndex.setText("QUESTION " + resultObject.getQuizIndex());
-            holder.mainQuestion.setText(resultObject.getQuestionTitle().trim());
-            holder.correctAnswer.setText("* " + resultObject.getCollectAnswer().trim() + " *");
-            holder.yourAnswer.setText("Your answer: " + resultObject.getSelectedAnswer().trim());
+        if(card != null){
+            holder.quizIndex.setText("CARD : " + card.getInfo("Index"));
+            holder.mainQuestion.setText(card.getInfo("kanji"));
+            holder.correctAnswer.setText("* " + card.getInfo("english") + " *");
+            holder.yourAnswer.setText("Your answer: " + card.getInfo("englishUser"));
 
-            if(resultObject.isCorrect()){
+            if(Boolean.valueOf(card.getInfo("markUser"))){
                 holder.imageMark.setImageResource(R.drawable.goodmark);
             }else{
                 holder.imageMark.setImageResource(R.drawable.badmark);
@@ -55,6 +50,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder>{
 
     @Override
     public int getItemCount() {
-        return resultObjectList.size();
+        return cardList.size();
     }
 }

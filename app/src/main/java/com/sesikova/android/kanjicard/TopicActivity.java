@@ -7,9 +7,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import java.util.List;
 
-import com.sesikova.android.kanjicard.Adapter.TopicAdapter;
-import com.sesikova.android.kanjicard.DataBase.DataBaseQuery;
-import com.sesikova.android.kanjicard.Entity.TopicObject;
+import com.sesikova.android.kanjicard.Service.TopicAdapter;
+import com.sesikova.android.kanjicard.Service.DataBaseQuery;
+import com.sesikova.android.kanjicard.Service.Topic;
 
 
 
@@ -23,7 +23,7 @@ public class TopicActivity extends AppCompatActivity {
         setTitle(getString(R.string.topic));
 
         DataBaseQuery dbQuery = new DataBaseQuery(TopicActivity.this);
-        List<TopicObject> topicList = dbQuery.getTopicList();
+        List<Topic> topicList = dbQuery.getTopicList();
 
         RecyclerView topicRecyclerView = (RecyclerView)findViewById(R.id.topic_list);
         GridLayoutManager mGrid = new GridLayoutManager(this, 2);

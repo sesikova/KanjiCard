@@ -9,10 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.sesikova.android.kanjicard.QuizActivity">
+    tools:context="com.sesikova.android.kanjicard.CardActivity">
 
     <TextView
-        android:id="@+id/question_number"
+        android:id="@+id/cardIndexTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -21,7 +21,7 @@
         android:textColor="@color/colorPrimaryText"/>
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/kanjiTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="150dp"
@@ -29,14 +29,14 @@
         android:layout_marginTop="12dp"/>
 
     <RadioGroup
-        android:id="@+id/answer_options"
+        android:id="@+id/variantRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:orientation="vertical">
 
         <RadioButton
-            android:id="@+id/answer_1"
+            android:id="@+id/variant1RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
@@ -46,18 +46,7 @@
             android:textColor="@color/colorPrimaryText"/>
 
         <RadioButton
-            android:id="@+id/answer_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:paddingLeft="4dp"
-            android:paddingStart="4dp"
-            android:textColor="@color/colorPrimaryText"/>
-
-        <RadioButton
-            android:id="@+id/answer_3"
+            android:id="@+id/variant2RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
@@ -68,7 +57,18 @@
             android:textColor="@color/colorPrimaryText"/>
 
         <RadioButton
-            android:id="@+id/answer_4"
+            android:id="@+id/variant3RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="4dp"
+            android:paddingStart="4dp"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <RadioButton
+            android:id="@+id/variant4RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13dp"

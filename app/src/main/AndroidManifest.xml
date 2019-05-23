@@ -20,9 +20,9 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".InstructionActivity" />
         <activity android:name=".TopicActivity" />
-        <activity android:name=".QuizActivity" />
+        <activity android:name=".CardActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".ResultReportActivity" />
+        <activity android:name=".ReportActivity" />
     </application>
 
 </manifest>

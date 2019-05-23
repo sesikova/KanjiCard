@@ -30,7 +30,9 @@ public class ResultActivity extends AppCompatActivity {
         resultCircleView.setSubtitleText(quizScore+" of "+quizCount);
 
         Button retakeQuizButton = (Button)findViewById(R.id.retake_quiz);
-        assert retakeQuizButton != null;
+
+
+
         retakeQuizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,11 +42,13 @@ public class ResultActivity extends AppCompatActivity {
         });
 
         Button viewQuizResultButton = (Button)findViewById(R.id.view_result);
-        assert viewQuizResultButton != null;
+
+
+
         viewQuizResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent resultActivityIntent = new Intent(ResultActivity.this, ResultReportActivity.class);
+                Intent resultActivityIntent = new Intent(ResultActivity.this, ReportActivity.class);
                 resultActivityIntent.putExtra("RESULT_OBJECT", resultObject);
                 startActivity(resultActivityIntent);
             }
