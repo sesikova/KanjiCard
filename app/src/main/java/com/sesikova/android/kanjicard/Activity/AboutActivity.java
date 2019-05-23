@@ -1,9 +1,10 @@
-package com.sesikova.android.kanjicard;
+package com.sesikova.android.kanjicard.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.sesikova.android.kanjicard.R;
 import com.sesikova.android.kanjicard.Service.Information;
 
 public class AboutActivity extends AppCompatActivity {

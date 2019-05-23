@@ -19,15 +19,25 @@ public class Card {
     }
 
     public String getInfo(String infoType) {
-        String info="";
+        String info="***";
         if (infoType.equals("kanji")) {
-            info = this.kanji;
+            info = kanji;
         }
         if (infoType.equals("english")) {
-            info = this.english;
+            info = english;
         }
         if (infoType.equals("variants")) {
-            info = this.variants;
+            info = variants;
+        }
+        if (infoType.equals("index")) {
+            info = index;
+        }
+        if (infoType.equals("englishUser")) {
+            info = englishUser;
+        }
+
+        if (infoType.equals("markUser")) {
+            info = Boolean.toString(markUser);
         }
         return info;
     }
@@ -44,9 +54,8 @@ public class Card {
     }
 
 
-    public String[] convertOptionsToStringArray(String options){
-        String[] allOptions = options.split(",");
-        return allOptions;
+    public String[] variantsToArray(String variants){
+        return variants.split(",");
     }
 
 

@@ -5,7 +5,7 @@ android:id="@+id/activity_quiz_category"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/colorPrimaryLight"
-tools:context="com.sesikova.android.kanjicard.TopicActivity">
+tools:context="com.sesikova.android.kanjicard.Activity.TopicActivity">
 
 <android.support.v7.widget.RecyclerView
     android:id="@+id/topic_list"

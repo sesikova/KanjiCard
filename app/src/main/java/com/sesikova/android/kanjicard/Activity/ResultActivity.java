@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard;
+package com.sesikova.android.kanjicard.Activity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -8,8 +8,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.github.pavlospt.CircleView;
+import com.google.gson.GsonBuilder;
+import com.sesikova.android.kanjicard.R;
+import com.sesikova.android.kanjicard.Service.Card;
+import com.sesikova.android.kanjicard.Service.Outcome;
+
+import java.util.List;
 
 public class ResultActivity extends AppCompatActivity {
+
+    private String outcomeJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,23 +25,23 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        setTitle(getString(R.string.quiz_result));
+        setTitle(getString(R.string.result_title));
 
-        final String resultObject = getIntent().getExtras().getString("RESULT_OBJECT");
-        int quizScore = Integer.parseInt(getIntent().getExtras().getString("QUIZ_SCORE"));
-        int quizCount = Integer.parseInt(getIntent().getExtras().getString("QUIZ_COUNT"));
+        outcomeJson = getIntent().getExtras().getString("OUTCOME");
+        Outcome outcome = new GsonBuilder().create().fromJson(outcomeJson, Outcome.class);
 
-
+        int MarkGoodCount = outcome.getMarkGoodCount();
+        int MarkAllCount = outcome.getMarkAllCount();
 
         CircleView resultCircleView = (CircleView)findViewById(R.id.result_info);
-        resultCircleView.setTitleText((quizScore * 100) / quizCount + "%");
-        resultCircleView.setSubtitleText(quizScore+" of "+quizCount);
+        resultCircleView.setTitleText((MarkGoodCount * 100) / MarkAllCount + "%");
+        resultCircleView.setSubtitleText(MarkGoodCount+" of "+MarkAllCount);
 
-        Button retakeQuizButton = (Button)findViewById(R.id.retake_quiz);
+        Button restertButton = (Button)findViewById(R.id.restartButton);
 
 
 
-        retakeQuizButton.setOnClickListener(new View.OnClickListener() {
+        restertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent resultActivityIntent = new Intent(ResultActivity.this, TopicActivity.class);
@@ -41,15 +49,15 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        Button viewQuizResultButton = (Button)findViewById(R.id.view_result);
+        Button reportButton = (Button)findViewById(R.id.reportButton);
 
 
 
-        viewQuizResultButton.setOnClickListener(new View.OnClickListener() {
+        reportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent resultActivityIntent = new Intent(ResultActivity.this, ReportActivity.class);
-                resultActivityIntent.putExtra("RESULT_OBJECT", resultObject);
+                resultActivityIntent.putExtra("Outcome", outcomeJson);
                 startActivity(resultActivityIntent);
             }
         });

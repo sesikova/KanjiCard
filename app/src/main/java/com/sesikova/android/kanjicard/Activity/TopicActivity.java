@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard;
+package com.sesikova.android.kanjicard.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import java.util.List;
 
+import com.sesikova.android.kanjicard.R;
 import com.sesikova.android.kanjicard.Service.TopicAdapter;
 import com.sesikova.android.kanjicard.Service.DataBaseQuery;
 import com.sesikova.android.kanjicard.Service.Topic;

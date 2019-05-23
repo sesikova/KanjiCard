@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.sesikova.android.kanjicard.ResultActivity">
+    tools:context="com.sesikova.android.kanjicard.Activity.ResultActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,20 +47,20 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/retake_quiz"
+        android:id="@+id/restartButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/icons"
-        android:text="@string/retake_quiz"
+        android:text="@string/restart_button"
         android:layout_marginTop="80dp"
         android:background="@color/colorPrimaryDark"/>
 
     <Button
-        android:id="@+id/view_result"
+        android:id="@+id/reportButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/icons"
-        android:text="@string/view_result"
+        android:text="@string/report_button"
         android:layout_marginTop="16dp"
         android:background="@color/colorPrimaryDark"/>
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 
 import com.sesikova.android.kanjicard.R;
-import com.sesikova.android.kanjicard.CardActivity;
+import com.sesikova.android.kanjicard.Activity.CardActivity;
 
 
 public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{

@@ -5,10 +5,10 @@
     <string name="instruction">INSTRUCTION</string>
     <string name="about">ABOUT</string>
 
-    <string name="next_button">NEXT QUESTION</string>
-    <string name="retake_quiz">Retake quiz</string>
-    <string name="view_result">View result</string>
-    <string name="quiz_result">Quiz Result</string>
-    <string name="reportTitle">Report</string>
-    <string name="no_quiz">No quiz in this topic.</string>
+    <string name="nextCard_button">NEXT CARD</string>
+    <string name="restart_button">RESTART</string>
+    <string name="result_title">Result</string>
+    <string name="report_button">REPORT</string>
+    <string name="report_title">Report</string>
+    <string name="noCard_message">NO CARDS !!!</string>
 </resources>

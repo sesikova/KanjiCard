@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.sesikova.android.kanjicard.Activity.AboutActivity"></activity>
+        <activity android:name="com.sesikova.android.kanjicard.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".InstructionActivity" />
-        <activity android:name=".TopicActivity" />
-        <activity android:name=".CardActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".ReportActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.MenuActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.InstructionActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.TopicActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.CardActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.ResultActivity" />
+        <activity android:name="com.sesikova.android.kanjicard.Activity.ReportActivity" />
     </application>
 
 </manifest>

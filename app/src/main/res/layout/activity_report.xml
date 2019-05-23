@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.sesikova.android.kanjicard.ReportActivity">
+    tools:context="com.sesikova.android.kanjicard.Activity.ReportActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reportRecyclerView"

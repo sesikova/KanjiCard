@@ -1,4 +1,4 @@
-package com.sesikova.android.kanjicard;
+package com.sesikova.android.kanjicard.Activity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.sesikova.android.kanjicard.R;
 
 public class MainActivity extends AppCompatActivity {
 
