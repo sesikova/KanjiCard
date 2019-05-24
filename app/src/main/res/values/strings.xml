@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">KanjiCard</string>
-    <string name="app_slogan">千里の道も一歩から</string>
+    <string name="app_motto">千里の道も一歩から</string>
     <string name="topic">TOPICS</string>
     <string name="instruction">INSTRUCTION</string>
     <string name="about">ABOUT</string>

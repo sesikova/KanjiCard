@@ -33,7 +33,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportViewHolder>{
         Card card = cardList.get(position);
 
         if(card != null){
-            holder.cardIndexTextView.setText("CARD : " + card.getInfo("index"));
+            holder.cardIndexTextView.setText("CARD : " + card.getInfo("id"));
             holder.kanjiTextView.setText(card.getInfo("kanji"));
             holder.englishTextView.setText("* " + card.getInfo("english") + " *");
             holder.englishUserTextView.setText("YOU : " + card.getInfo("englishUser"));

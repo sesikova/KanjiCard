@@ -21,15 +21,12 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         ActionBar actionBar = getSupportActionBar();
         if(null != actionBar){
             actionBar.hide();
         }
 
         Button selectQuiz = (Button)findViewById(R.id.topic_button);
-        assert selectQuiz != null;
         selectQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +37,6 @@ public class MenuActivity extends AppCompatActivity {
 
 
         Button quizInstruction = (Button)findViewById(R.id.instruction_button);
-        assert quizInstruction != null;
         quizInstruction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +46,6 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         Button quizAbout = (Button)findViewById(R.id.about_button);
-        assert quizAbout != null;
         quizAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

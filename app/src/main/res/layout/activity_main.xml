@@ -11,7 +11,7 @@
     tools:context="com.sesikova.android.kanjicard.Activity.MainActivity">
 
     <ImageView
-        android:id="@+id/quiz_logo"
+        android:id="@+id/app_logo"
         android:layout_width="271dp"
         android:layout_height="366dp"
         android:layout_centerHorizontal="true"
@@ -19,17 +19,31 @@
         android:src="@drawable/main_logo" />
 
     <TextView
+        android:id="@+id/app_motto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/quiz_logo"
+        android:layout_below="@+id/app_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp"
-        android:text="@string/app_slogan"
+        android:text="@string/app_motto"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryText"
         android:textSize="36sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_motto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="55sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -2,40 +2,41 @@ package com.sesikova.android.kanjicard.Service;
 
 public class Card {
 
-
+    private int id;
     private String kanji;
     private String english;
-    private String variants;
-
-    private String index;
+    private String[] variantArray;
     private String englishUser;
     private boolean markUser;
 
-    public Card(String index, String kanji, String variants, String english) {
-        this.index = index;
+    public Card(int id, String kanji,String english) {
+        this.id = id;
         this.kanji = kanji;
-        this.variants = variants;
         this.english = english;
     }
 
+    public String[] getVariantArray() {
+        return variantArray;
+    }
+
+    public void setVariantArray(String[] variantArray) {
+        this.variantArray = variantArray;
+    }
+
     public String getInfo(String infoType) {
-        String info="***";
+        String info="";
+        if (infoType.equals("id")) {
+            info = Integer.toString( id );
+        }
         if (infoType.equals("kanji")) {
             info = kanji;
         }
         if (infoType.equals("english")) {
             info = english;
         }
-        if (infoType.equals("variants")) {
-            info = variants;
-        }
-        if (infoType.equals("index")) {
-            info = index;
-        }
         if (infoType.equals("englishUser")) {
             info = englishUser;
         }
-
         if (infoType.equals("markUser")) {
             info = Boolean.toString(markUser);
         }
@@ -51,11 +52,6 @@ public class Card {
         if (infoType.equals("markUser")) {
             this.markUser = Boolean.valueOf(info);
         }
-    }
-
-
-    public String[] variantsToArray(String variants){
-        return variants.split(",");
     }
 
 

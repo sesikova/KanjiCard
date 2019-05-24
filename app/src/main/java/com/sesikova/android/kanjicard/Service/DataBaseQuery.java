@@ -52,22 +52,54 @@ public class DataBaseQuery {
 
     public List<Card> getCardList(int topic){
         List<Card> cardList = new ArrayList<Card>();
-        int Index = 0;
+        String[] variantArray = { "1", "2", "3", "4"};
 
         String query = "select * from card where topic =" +  topic;
         Cursor cursor = getDbConnection().rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
-                Index++;
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String kanji = cursor.getString(cursor.getColumnIndexOrThrow("kanji"));
-                String variants = cursor.getString(cursor.getColumnIndexOrThrow("variants"));
                 String english = cursor.getString(cursor.getColumnIndexOrThrow("english"));
-                cardList.add(new Card(Integer.toString(Index),kanji, variants, english));
-            }while(cursor.moveToNext());
+                cardList.add(new Card(id,kanji,english));
+
+            }
+            while(cursor.moveToNext());
         }
         cursor.close();
 
+        if(cardList.size() != 0){
+            int cardCount = cardList.size();
+            int cardIndex = 0;
+            while(cardIndex < cardCount){
+                Card card = cardList.get(cardIndex);
+                card.setVariantArray(getCardVariant(card.getInfo("id")));
+                //card.variantArray = getCardVariant(card.getInfo("id"));
+                cardIndex++;
+            }
+        }
+
         return cardList;
+    }
+
+
+
+    private String[] getCardVariant(String cardId){
+        String[] variantArray = { "", "", "", ""};
+        int Index = 0;
+
+        String query = "select * from variant where card =" +  cardId;
+        Cursor cursor = getDbConnection().rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                variantArray[Index] =cursor.getString(cursor.getColumnIndexOrThrow("english")).trim();
+                Index++;
+            }
+            while(cursor.moveToNext());
+        }
+       cursor.close();
+
+       return variantArray;
     }
 
 
